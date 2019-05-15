@@ -1,0 +1,26 @@
+package cn.fuqiang.ssmtest.bean;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class TestBean {
+    private String teststr;
+
+    private Long testint;
+
+    public String getTeststr() {
+        return teststr;
+    }
+
+    public void setTeststr(String teststr) {
+        this.teststr = teststr == null ? null : teststr.trim();
+    }
+
+    public Long getTestint() {
+        return testint;
+    }
+
+    public void setTestint(Long testint) {
+        this.testint = testint;
+    }
+}

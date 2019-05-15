@@ -1,0 +1,4 @@
+jdbc.username=root	
+ds.hosts[0]=192.168.1.100
+ds.hosts[1]=192.168.1.100
+ds.hosts[2]=192.168.1.100

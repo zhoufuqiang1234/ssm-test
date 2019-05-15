@@ -1,0 +1,28 @@
+package cn.fuqiang.ssmtest.test;
+
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = { "classpath:applicationContext.xml" })
+public class TestDao {
+    @Autowired
+    TestBeanMapper testBeanMapper;
+
+    @Test
+    public void testInsert() {
+        TestBean testBean = new TestBean();
+        testBean.setTeststr("mybatisInsert");
+        testBean.setTestint(343);
+
+        testBeanMapper.insert(testBean);
+
+    }
+}
+--------------------- 
+作者：Steven Go 
+来源：CSDN 
+原文：https://blog.csdn.net/u010378929/article/details/79057872 
+版权声明：本文为博主原创文章，转载请附上博文链接！

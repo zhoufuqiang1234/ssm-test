@@ -1,0 +1,25 @@
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.Bean;
+
+@SpringBootApplication
+public class DemoApplication {
+	@Bean
+	public Runnable createRunnable() {
+		return ()->{System.out.println(" spring boot is run");};	
+	}
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context = SpringApplication.run(DemoApplication.class, args);
+         context.getBean(Runnable.class).run();	
+         System.out.println(context.getBean(User.class));
+         System.out.println(context.getEnvironment().getProperty("jdbc.username"));
+         System.out.println(context.getEnvironment().getProperty("jdbc.password"));
+         System.out.println(context.getBean(TomcatProperties.class));
+         context.close();
+	}
+
+}
